@@ -17,38 +17,39 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Form Handling
+    // Form Handling - Formspree
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(contactForm);
-            const data = {};
-            formData.forEach((value, key) => {
-                data[key] = value;
-            });
 
-            // Create mailto link
-            const subject = encodeURIComponent(`Website Inquiry: ${data.service}`);
-            const body = encodeURIComponent(
-                `Name: ${data.name}\n` +
-                `District: ${data.district}\n` +
-                `Email: ${data.email}\n` +
-                `Phone: ${data.phone || 'Not provided'}\n` +
-                `Service Interest: ${data.service}\n\n` +
-                `Message:\n${data.message}`
-            );
-            
-            // Open mail client
-            window.location.href = `mailto:david@sparrowdataservices.com?subject=${subject}&body=${body}`;
-            
-            // Show success message
-            showAlert('Thank you! Your default email client should open. If not, please email us directly at david@sparrowdataservices.com', 'success');
-            
-            // Reset form
-            contactForm.reset();
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            submitButton.textContent = 'Sending...';
+            submitButton.disabled = true;
+
+            const formData = new FormData(contactForm);
+
+            try {
+                const response = await fetch('https://formspree.io/f/mqedebry', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    showAlert("Thank you! Your message has been sent. We'll be in touch soon!", 'success');
+                    contactForm.reset();
+                } else {
+                    showAlert('Oops! There was a problem sending your message. Please try again.', 'error');
+                }
+            } catch (error) {
+                showAlert('Oops! There was a problem sending your message. Please try again.', 'error');
+            }
+
+            submitButton.textContent = 'Send Message';
+            submitButton.disabled = false;
         });
     }
 
@@ -72,13 +73,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Alert function
 function showAlert(message, type) {
+    const existingAlert = document.querySelector('.alert');
+    if (existingAlert) existingAlert.remove();
+
     const alertDiv = document.createElement('div');
-    alertDiv.className = `alert alert-${type}`;
+    alertDiv.className = 'alert alert-' + type;
     alertDiv.textContent = message;
-    
+
     const form = document.getElementById('contactForm');
     form.parentNode.insertBefore(alertDiv, form);
-    
+
     setTimeout(() => {
         alertDiv.remove();
     }, 6000);
