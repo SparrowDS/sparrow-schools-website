@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CAASPP Analytics | Sparrow Data Services</title>
-    <meta name="description" content="Comprehensive CAASPP data analysis, dashboards, and reporting for California school districts.">
+    <title>CAASPP Analytics Package | Sparrow Data Services</title>
+    <meta name="description" content="A complete CAASPP analysis package for California school districts—reports, data workbooks, and tools to turn your results into action.">
     <link rel="icon" type="image/png" href="images/SDS_logo_transparent.png">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-5SXX5XPLB7"></script>
@@ -15,6 +15,21 @@
       gtag('config', 'G-5SXX5XPLB7');
     </script>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .three-col-grid {
+            grid-template-columns: repeat(3, 1fr) !important;
+        }
+        @media (max-width: 1024px) {
+            .three-col-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+        }
+        @media (max-width: 768px) {
+            .three-col-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -46,50 +61,186 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>CAASPP Analytics & Reporting</h1>
-                <p class="hero-subtitle">Transform your CAASPP results into actionable insights that drive instructional improvement and student success.</p>
+                <h1>Your CAASPP Results,<br>Explained.</h1>
+                <p class="hero-subtitle">Preliminary CAASPP results arrive as early as late May—and your analysis package can be in your hands within 10 days of that. We do the heavy lifting so your team gets clear reports, usable data, and concrete next steps before the school year even ends.</p>
                 <div class="hero-buttons">
-                    <a href="index.html#contact" class="btn btn-primary">Request Information</a>
+                    <a href="index.html#contact" class="btn btn-primary">Get Notified When Available</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Coming Soon Section -->
+    <!-- The Problem Section -->
     <section class="services">
         <div class="container">
-            <h2>Comprehensive CAASPP Support</h2>
-            <p class="section-subtitle">We're currently developing comprehensive CAASPP analytics services including detailed performance reports, interactive dashboards, and trend analysis. These services will help you understand student achievement, identify learning gaps, and make data-informed decisions about instruction and intervention.</p>
-            
+            <h2>CAASPP Data Shouldn't Require a Data Team to Understand</h2>
+            <p class="section-subtitle">When your results arrive—potentially as early as late May—you're handed a raw data file with hundreds of columns, thousands of rows, and no roadmap. Your board wants answers. Your principals want direction. Your teachers want to know what it means for their classrooms. And your team has approximately none of the time it takes to turn that file into something useful.</p>
+
             <div class="why-grid" style="margin-top: 3rem;">
                 <div class="why-item">
-                    <h3>Performance Analysis</h3>
-                    <p>Detailed breakdowns of student performance by grade level, subgroup, claim, and target to identify strengths and areas for growth.</p>
+                    <h3>The Data Is Complex By Design</h3>
+                    <p>The TOMS data download is built for state-level analysis, not for a director of curriculum wearing four other hats. Distance from Standard, scale scores, achievement levels, claim-level performance, subgroup disaggregations—it takes real expertise to pull meaningful signal from all of it.</p>
                 </div>
                 <div class="why-item">
-                    <h3>Trend Reporting</h3>
-                    <p>Multi-year analysis showing how your students' performance changes over time, helping you evaluate the effectiveness of your programs.</p>
+                    <h3>The Stakes Are Real</h3>
+                    <p>Your CAASPP results feed directly into the California Dashboard, affect your accountability status, and shape the story your community tells about your schools. You need to understand your data—and be able to communicate it clearly—before someone else tells the story for you.</p>
                 </div>
                 <div class="why-item">
-                    <h3>Gap Analysis</h3>
-                    <p>Clear identification of achievement gaps between student subgroups, with recommendations for targeted intervention.</p>
-                </div>
-                <div class="why-item">
-                    <h3>Teacher & School Reports</h3>
-                    <p>Customized reports at the classroom, grade, and school level to support teachers and administrators in their decision-making.</p>
+                    <h3>What's Usually Missing</h3>
+                    <p>Most districts can pull a percent Met and Exceeded or an achievement level breakdown from their SIS. That's a starting point—but it's not analysis. What's harder to get to is the trend across years, the subgroup disaggregation, the Dashboard prediction, the student-level picture, and the clear answer to "what do we actually do about this?" That's the gap we fill.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Sample Placeholder -->
+    <!-- Vision Banner -->
+    <section class="vision">
+        <div class="container">
+            <div class="vision-content">
+                <h2>One Package. Everything You Need.</h2>
+                <p>The Sparrow CAASPP Analysis Package gives your district a complete set of reports, data tools, and action resources—designed for every audience from board members to instructional coaches. No partial answers, no piecemeal products. One cohesive package that turns your results into understanding and your understanding into action.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- What We Give You Section (Conceptual) -->
+    <section id="what-you-receive" class="why-choose">
+        <div class="container">
+            <h2>What You'll Actually Know When We're Done</h2>
+            <p class="section-subtitle">The package is built around six things every district should be able to say about their CAASPP results—but rarely can without dedicated support.</p>
+
+            <div class="services-grid three-col-grid" style="margin-top: 3rem;">
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="18" y1="20" x2="18" y2="10"/>
+                            <line x1="12" y1="20" x2="12" y2="4"/>
+                            <line x1="6" y1="20" x2="6" y2="14"/>
+                        </svg>
+                    </div>
+                    <h3>Where You Stand</h3>
+                    <p>A clear picture of this year's performance across the metrics that matter most—Distance from Standard, percent Met and Exceeded, achievement levels, and scale scores—for all students and your key focus groups.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                            <polyline points="17 6 23 6 23 12"/>
+                        </svg>
+                    </div>
+                    <h3>Whether You're Moving</h3>
+                    <p>Multi-year trend analysis and individual student growth measurement—so you can see not just where you are, but whether your students are actually making progress from year to year.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"/>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                        </svg>
+                    </div>
+                    <h3>Where the Differences Are</h3>
+                    <p>Performance disaggregated by school site, grade level, and student group—so you can see not just how the district did overall, but where results differ and which populations deserve more attention or well-earned recognition.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5"/>
+                        </svg>
+                    </div>
+                    <h3>Where You're Headed on the CA Dashboard</h3>
+                    <p>Your CAASPP results feed directly into your California Dashboard accountability ratings. We show you what your current results suggest about your Dashboard trajectory, so you're not caught off guard when the ratings publish.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9 11 12 14 22 4"/>
+                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                        </svg>
+                    </div>
+                    <h3>Which Students Need Action—and What That Action Is</h3>
+                    <p>A student-level view of who needs support and who deserves recognition, paired with specific, prioritized action steps for principals and instructional coaches. Grounded in your actual results, not generic recommendations.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <h3>How to Lead Your Team Through the Data</h3>
+                    <p>Knowing your results is one thing. Building shared understanding with your leadership team is another. We give you a structured guide to facilitate a two-hour analysis session—with prompts designed to surface root causes, identify strengths, and align your team around priorities.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Deliverables List -->
+    <section class="services">
+        <div class="container">
+            <h2>What's in the Package</h2>
+            <p class="section-subtitle">Six deliverables, each built from your district's actual data. Every item is designed for a specific audience and purpose—from your board to your instructional coaches.</p>
+
+            <div style="max-width: 800px; margin: 3rem auto 0;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem 3rem;">
+                <div>
+                    <p style="margin-bottom: 1.25rem;"><strong>Community Snapshot</strong><br>A single-page public-facing summary of your results—clear visuals, plain language, ready to share with your community.</p>
+                    <p style="margin-bottom: 1.25rem;"><strong>Leadership Brief</strong><br>A three-page executive summary built for board presentations. High-level overview, key trends, and the context your board needs to have an informed conversation.</p>
+                    <p style="margin-bottom: 1.25rem;"><strong>District Analysis Report</strong><br>The full ~25-page analysis—DFS, % Met and Exceeded, growth, Dashboard predictions, achievement level breakdowns, and subgroup disaggregations for ELA and Math. With explanations and visualizations throughout.</p>
+                </div>
+                <div>
+                    <p style="margin-bottom: 1.25rem;"><strong>Student Data Workbook</strong><br>Your student-level CAASPP results transformed into a clean, color-coded Excel workbook—formatted for sorting, filtering, and real analysis by your team.</p>
+                    <p style="margin-bottom: 1.25rem;"><strong>Instructional Next Steps Report</strong><br>Specific, prioritized action steps for principals and instructional coaches—organized by focus area and grounded in your actual results.</p>
+                    <p style="margin-bottom: 1.25rem;"><strong>Leadership Data Analysis Guide</strong><br>A ready-to-run guide for leading a two-hour data analysis session with your leadership team. Guided questions, facilitation prompts, and a clear flow from results to priorities. No outside facilitator needed.</p>
+                </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Site-Level Add-On -->
     <section class="why-choose">
         <div class="container">
-            <h2>Sample CAASPP Dashboard</h2>
-            <div style="background-color: white; padding: 3rem; border-radius: 12px; margin-top: 2rem; text-align: center;">
-                <p style="color: #4A5568; font-size: 1.125rem; margin-bottom: 1.5rem;">Sample dashboards and reports will be available soon.</p>
-                <p style="color: #4A5568;">Interested in seeing what CAASPP analytics could look like for your district? Contact us to discuss your specific needs.</p>
-                <a href="index.html#contact" class="btn btn-primary" style="margin-top: 2rem;">Contact Us</a>
+            <h2>Need Site-Level Analysis Too?</h2>
+            <p class="section-subtitle">The standard package covers your district as a whole. If you want the same complete package broken out for individual school sites, that's available as an add-on—giving each principal their own reports, workbook, and next steps based on their site's specific results.</p>
+            <div class="why-grid" style="margin-top: 3rem;">
+                <div class="why-item">
+                    <h3>District Package</h3>
+                    <p>All six deliverables built from your district-level data. The right starting point for understanding your overall performance and setting direction.</p>
+                </div>
+                <div class="why-item">
+                    <h3>Site-Level Add-On</h3>
+                    <p>The full package replicated for each of your school sites. Each principal gets their own set of reports tailored to their school's results—without your district team having to do the work themselves.</p>
+                </div>
+                <div class="why-item">
+                    <h3>Delivery</h3>
+                    <p>All deliverables are provided as a secure file package via cloud download link—PDFs, the Excel workbook, and the Leadership Data Analysis Guide all in one place, ready to use immediately.</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="index.html#contact" class="btn btn-primary">Ask About Site-Level Pricing</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coming Soon Banner -->
+    <section class="vision">
+        <div class="container">
+            <div class="vision-content">
+                <h2>Results Before the School Year Ends</h2>
+                <p>Preliminary CAASPP results are available to districts as early as late May. We can have your complete analysis package delivered within 10 days—potentially by mid-June. When official results publish later in the summer, we run the process again at no additional cost, so you always have a final version on record. Contact us now to get on the notification list or discuss what the package would look like for your district.</p>
+                <div style="margin-top: 2rem;">
+                    <a href="index.html#contact" class="btn btn-secondary">Get Notified When Available</a>
+                </div>
             </div>
         </div>
     </section>
@@ -99,7 +250,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <img src="images/SDS_logo_transparent.png alt="Sparrow Data Services" class="footer-logo">
+                    <img src="images/SDS_logo_transparent.png" alt="Sparrow Data Services" class="footer-logo">
                     <p>Empowering schools with clear, actionable data insights.</p>
                 </div>
                 <div class="footer-section">
@@ -117,4 +268,11 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Sparrow Data Servic
+                <p>&copy; 2025 Sparrow Data Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
