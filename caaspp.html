@@ -29,6 +29,79 @@
                 grid-template-columns: 1fr !important;
             }
         }
+
+        /* Gallery */
+        .gallery-item {
+            cursor: pointer;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: rgba(255,255,255,0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .gallery-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+        }
+        .gallery-item img {
+            width: 100%;
+            display: block;
+            border-bottom: 1px solid rgba(255,255,255,0.15);
+        }
+        .gallery-caption {
+            color: rgba(255,255,255,0.9);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-align: center;
+            padding: 0.6rem 0.75rem;
+            margin: 0;
+        }
+
+        /* Lightbox */
+        #lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background-color: rgba(0,0,0,0.88);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 2rem;
+        }
+        #lightbox.active {
+            display: flex;
+        }
+        #lightbox-img {
+            max-width: min(860px, 90vw);
+            max-height: 80vh;
+            border-radius: 8px;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+            object-fit: contain;
+        }
+        #lightbox-caption {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            text-align: center;
+            max-width: 700px;
+            line-height: 1.5;
+        }
+        #lightbox-close {
+            position: fixed;
+            top: 1.25rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2.25rem;
+            cursor: pointer;
+            line-height: 1;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+        #lightbox-close:hover {
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
@@ -62,9 +135,10 @@
         <div class="container">
             <div class="hero-content">
                 <h1>Your CAASPP Results,<br>Explained.</h1>
-                <p class="hero-subtitle">Preliminary CAASPP results arrive as early as late May—and your analysis package can be in your hands within 10 days of that. We do the heavy lifting so your team gets clear reports, usable data, and concrete next steps before the school year even ends.</p>
+                <p class="hero-subtitle">Every year, districts receive one of the most important pictures of how their students are performing—and one of the most difficult files they'll ever be handed. Your board wants answers. Your principals want direction. Your teachers want to know what it means for their classrooms. We turn that raw data into clear reports, usable workbooks, and concrete next steps—delivered within 10 days of results dropping.</p>
                 <div class="hero-buttons">
-                    <a href="index.html#contact" class="btn btn-primary">Get Notified When Available</a>
+                    <a href="#sample-report" class="btn btn-primary">See a Sample Report</a>
+                    <a href="index.html#contact" class="btn btn-secondary">Get Notified When Available</a>
                 </div>
             </div>
         </div>
@@ -73,7 +147,7 @@
     <!-- The Problem Section -->
     <section class="services">
         <div class="container">
-            <h2>CAASPP Data Shouldn't Require a Data Team to Understand</h2>
+            <h2>Your CAASPP Results Deserve More Than a Spreadsheet.</h2>
             <p class="section-subtitle">When your results arrive—potentially as early as late May—you're handed a raw data file with hundreds of columns, thousands of rows, and no roadmap. Your board wants answers. Your principals want direction. Your teachers want to know what it means for their classrooms. And your team has approximately none of the time it takes to turn that file into something useful.</p>
 
             <div class="why-grid" style="margin-top: 3rem;">
@@ -90,18 +164,60 @@
                     <p>Most districts can pull a percent Met and Exceeded or an achievement level breakdown from their SIS. That's a starting point—but it's not analysis. What's harder to get to is the trend across years, the subgroup disaggregation, the Dashboard prediction, the student-level picture, and the clear answer to "what do we actually do about this?" That's the gap we fill.</p>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Vision Banner -->
-    <section class="vision">
-        <div class="container">
-            <div class="vision-content">
-                <h2>One Package. Everything You Need.</h2>
-                <p>The Sparrow CAASPP Analysis Package gives your district a complete set of reports, data tools, and action resources—designed for every audience from board members to instructional coaches. No partial answers, no piecemeal products. One cohesive package that turns your results into understanding and your understanding into action.</p>
+            <div style="background-color: var(--color-beige); border-radius: 12px; padding: 2rem 2.5rem; margin-top: 3rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                <h3 style="color: var(--color-secondary); margin-bottom: 1rem;">Built by Someone Who's Done This Work</h3>
+                <p style="color: #4A5568; line-height: 1.7;">We bring over 10 years of hands-on experience working directly with California student data—in the classroom as a teacher, and in the district office as a CAASPP LEA Coordinator responsible for processing results and leading data analysis at admin retreats and school site PLCs. We've mentored district analysts on better data display and coached leadership teams through the work of turning results into instructional action. This isn't a generic analytics product. It's a service built by someone who has sat in your chair and knows exactly what you need.</p>
+                <p style="color: #4A5568; line-height: 1.7; margin-top: 1rem;">Your data is handled with the seriousness it deserves. All transmission, storage, and communication of student data is fully FERPA compliant. We use secure methods for file transfer—you upload your data to a protected folder; we process it and return your deliverables through the same secure channel. We never have direct access to your systems or any student records beyond what you choose to share for this engagement.</p>
             </div>
         </div>
     </section>
+
+    <!-- Sample Report Gallery -->
+    <section id="sample-report" class="vision">
+        <div class="container">
+            <div class="vision-content">
+                <h2>See What You'll Actually Receive</h2>
+                <p>Every deliverable is built from your district's real data. Here's a look inside the District Analysis Report—the centerpiece of the package. Click any page to enlarge.</p>
+            </div>
+        </div>
+        <div style="max-width: 1100px; margin: 2.5rem auto 0; padding: 0 20px;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem;">
+
+                <div class="gallery-item" data-src="images/DA_-_Achievement_Level_Breakdown.jpg" data-caption="Achievement Level Breakdown — performance distribution across all four CAASPP levels, by site, grade, and student group">
+                    <img src="images/DA_-_Achievement_Level_Breakdown.jpg" alt="Achievement Level Breakdown report page">
+                    <p class="gallery-caption">Achievement Level Breakdown</p>
+                </div>
+
+                <div class="gallery-item" data-src="images/DA_-_Dashboard_Prediction.jpg" data-caption="CA Dashboard Prediction — your projected Dashboard color and student group performance levels based on current CAASPP results">
+                    <img src="images/DA_-_Dashboard_Prediction.jpg" alt="CA Dashboard Prediction report page">
+                    <p class="gallery-caption">CA Dashboard Prediction</p>
+                </div>
+
+                <div class="gallery-item" data-src="images/DA_-_Risers_and_Fallers.jpg" data-caption="Risers, Sustainers, and Fallers — individual student movement between achievement levels from the prior year">
+                    <img src="images/DA_-_Risers_and_Fallers.jpg" alt="Risers, Sustainers, and Fallers report page">
+                    <p class="gallery-caption">Risers, Sustainers &amp; Fallers</p>
+                </div>
+
+                <div class="gallery-item" data-src="images/DA-School_Site_Comparison.jpg" data-caption="School Site Comparison — DFS, % Met or Exceeded, and growth side by side across all your school sites">
+                    <img src="images/DA-School_Site_Comparison.jpg" alt="School Site Comparison report page">
+                    <p class="gallery-caption">School Site Comparison</p>
+                </div>
+
+            </div>
+            <p style="text-align: center; color: rgba(255,255,255,0.85); margin-top: 2rem; font-size: 0.95rem;">Want the full 35-page report? Enter your email below and we'll send it to you.</p>
+            <div style="text-align: center; margin-top: 1.25rem;">
+                <a href="#get-sample" class="btn btn-secondary">Get the Full Sample Report</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" role="dialog" aria-modal="true" aria-label="Report page preview">
+        <button id="lightbox-close" aria-label="Close preview">&times;</button>
+        <img id="lightbox-img" src="" alt="">
+        <p id="lightbox-caption"></p>
+    </div>
 
     <!-- What We Give You Section (Conceptual) -->
     <section id="what-you-receive" class="why-choose">
@@ -194,7 +310,7 @@
                 <div>
                     <p style="margin-bottom: 1.25rem;"><strong>Community Snapshot</strong><br>A single-page public-facing summary of your results—clear visuals, plain language, ready to share with your community.</p>
                     <p style="margin-bottom: 1.25rem;"><strong>Leadership Brief</strong><br>A three-page executive summary built for board presentations. High-level overview, key trends, and the context your board needs to have an informed conversation.</p>
-                    <p style="margin-bottom: 1.25rem;"><strong>District Analysis Report</strong><br>The full ~25-page analysis—DFS, % Met and Exceeded, growth, Dashboard predictions, achievement level breakdowns, and subgroup disaggregations for ELA and Math. With explanations and visualizations throughout.</p>
+                    <p style="margin-bottom: 1.25rem;"><strong>District Analysis Report</strong><br>The full 35+ page analysis—DFS, % Met and Exceeded, growth, Dashboard predictions, achievement level breakdowns, and subgroup disaggregations for ELA and Math. With explanations and visualizations throughout.</p>
                 </div>
                 <div>
                     <p style="margin-bottom: 1.25rem;"><strong>Student Data Workbook</strong><br>Your student-level CAASPP results transformed into a clean, color-coded Excel workbook—formatted for sorting, filtering, and real analysis by your team.</p>
@@ -207,19 +323,46 @@
         </div>
     </section>
 
-    <!-- Site-Level Add-On -->
-    <section class="why-choose">
+    <!-- Sample Report Email Capture -->
+    <section id="get-sample" class="why-choose">
         <div class="container">
-            <h2>Need Site-Level Analysis Too?</h2>
-            <p class="section-subtitle">The standard package covers your district as a whole. If you want the same complete package broken out for individual school sites, that's available as an add-on—giving each principal their own reports, workbook, and next steps based on their site's specific results.</p>
+            <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+                <h2>Get the Full Sample Report</h2>
+                <p class="section-subtitle">See exactly what your district would receive. Enter your email and we'll send you the complete 35-page District Analysis Report—built from a fictional district's data so you can see every section, every visualization, and every deliverable format.</p>
+                <div style="background-color: white; border-radius: 12px; padding: 2rem; margin-top: 2rem; text-align: left;">
+                    <form id="sampleReportForm" action="https://formspree.io/f/xjgjkpnq" method="POST">
+                        <input type="hidden" name="request_type" value="Sample Report Request">
+                        <div class="form-group">
+                            <label for="sample_name">Name *</label>
+                            <input type="text" id="sample_name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="sample_district">School District *</label>
+                            <input type="text" id="sample_district" name="district" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="sample_email">Email *</label>
+                            <input type="email" id="sample_email" name="email" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Me the Sample Report</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Pricing -->
+    <section class="services">
+        <div class="container">
+            <h2>Pricing</h2>
+            <p class="section-subtitle">The district package is a flat fee—no per-student pricing, no ongoing subscription.</p>
             <div class="why-grid" style="margin-top: 3rem;">
                 <div class="why-item">
-                    <h3>District Package</h3>
-                    <p>All six deliverables built from your district-level data. The right starting point for understanding your overall performance and setting direction.</p>
+                    <h3>District Package — $2,100</h3>
+                    <p>All six deliverables built from your district-level data. The right starting point for understanding your overall performance, communicating results to your board, and setting instructional direction for the year ahead.</p>
                 </div>
                 <div class="why-item">
-                    <h3>Site-Level Add-On</h3>
-                    <p>The full package replicated for each of your school sites. Each principal gets their own set of reports tailored to their school's results—without your district team having to do the work themselves.</p>
+                    <h3>Site-Level Add-Ons</h3>
+                    <p>Need the same analysis broken out for individual school sites? Site-level add-ons are available. Contact us to discuss scope and pricing based on your number of sites.</p>
                 </div>
                 <div class="why-item">
                     <h3>Delivery</h3>
@@ -232,14 +375,19 @@
         </div>
     </section>
 
-    <!-- Coming Soon Banner -->
+    <!-- Closing Banner -->
     <section class="vision">
         <div class="container">
             <div class="vision-content">
                 <h2>Results Before the School Year Ends</h2>
-                <p>Preliminary CAASPP results are available to districts as early as late May. We can have your complete analysis package delivered within 10 days—potentially by mid-June. When official results publish later in the summer, we run the process again at no additional cost, so you always have a final version on record. Contact us now to get on the notification list or discuss what the package would look like for your district.</p>
-                <div style="margin-top: 2rem;">
-                    <a href="index.html#contact" class="btn btn-secondary">Get Notified When Available</a>
+                <p>Preliminary CAASPP results are available to districts as early as late May. We can have your complete analysis package delivered within 10 days—potentially by mid-June. When official results publish later in the summer, we run the process again at no additional cost, so you always have a final version on record.</p>
+                <div style="background-color: rgba(255,255,255,0.15); border-radius: 10px; padding: 1.5rem 2rem; margin-top: 2rem; display: inline-block;">
+                    <p style="font-weight: 600; font-size: 1.1rem; margin-bottom: 0.5rem;">Early Sign-Up Discount</p>
+                    <p style="margin-bottom: 0;">Districts that sign up by May 20 save $200 off the district package. Contact us to lock in your spot.</p>
+                </div>
+                <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="index.html#contact" class="btn btn-secondary">Save $200 — Sign Up by May 20</a>
+                    <a href="index.html#contact" class="btn btn-primary" style="background-color: rgba(255,255,255,0.2); border: 2px solid white;">Get Notified When Available</a>
                 </div>
             </div>
         </div>
