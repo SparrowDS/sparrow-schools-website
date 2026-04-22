@@ -413,9 +413,9 @@
             <div class="content-wrapper">
                 <div class="content-text">
                     <h1>See What Comprehensive CAASPP Analysis Looks Like</h1>
-                    <p>This is a real <strong>Sample District Analysis Report</strong> from Evergreen Unified School District—the kind of depth and clarity your district would receive.</p>
-                    <p>It includes Distance from Standard analysis, multi-year trends, subgroup breakdowns, California Dashboard predictions, and actionable next steps grounded in actual data.</p>
-                    <p style="color: var(--color-dark); font-size: 0.95rem; margin-top: 2rem;"><strong>What you'll see:</strong> Complete CAASPP analysis with visualizations, trend analysis, and data-driven recommendations your team can act on immediately.</p>
+                    <p>This is a <strong>Sample District Analysis Report</strong> from Evergreen Unified School District—the kind of depth and clarity your district would receive.</p>
+                    <p>It includes analysis and trends across multiple metrics, subgroup breakdowns, CA Dashboard predictions, and more.</p>
+
                 </div>
 
                 <div class="form-container">
@@ -458,6 +458,20 @@
                                     <label class="entry__label" style="font-weight: 700; text-align:left; font-size:16px; text-align:left; font-weight:700; font-family:Helvetica, sans-serif; color:#3c4858;" for="FIRSTNAME" data-required="*">First Name</label>
                                     <div class="entry__field">
                                       <input class="input " maxlength="200" type="text" id="FIRSTNAME" name="FIRSTNAME" autocomplete="off" data-required="true" required />
+                                    </div>
+                                  </div>
+                                  <label class="entry__error entry__error--primary" style="font-size:16px; text-align:left; font-family:Helvetica, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;">
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                            <div style="padding: 8px 0;">
+                              <div class="sib-input sib-form-block">
+                                <div class="form__entry entry_block">
+                                  <div class="form__label-row ">
+                                    <label class="entry__label" style="font-weight: 700; text-align:left; font-size:16px; text-align:left; font-weight:700; font-family:Helvetica, sans-serif; color:#3c4858;" for="LASTNAME" data-required="*">Last Name</label>
+                                    <div class="entry__field">
+                                      <input class="input " maxlength="200" type="text" id="LASTNAME" name="LASTNAME" autocomplete="off" data-required="true" required />
                                     </div>
                                   </div>
                                   <label class="entry__error entry__error--primary" style="font-size:16px; text-align:left; font-family:Helvetica, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;">
@@ -547,7 +561,6 @@
                       });
                     </script>
 
-                    <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
                     <!-- END BREVO FORM -->
                 </div>
             </div>
@@ -567,6 +580,7 @@
         </div>
     </footer>
 
+    <!-- Mobile Menu Script -->
     <script>
         // Mobile Menu Toggle
         document.addEventListener('DOMContentLoaded', function() {
@@ -588,5 +602,8 @@
             });
         });
     </script>
+
+    <!-- Brevo Form Script - MUST be at the very end -->
+    <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 </body>
 </html>
