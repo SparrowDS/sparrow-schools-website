@@ -1,3 +1,52 @@
+// Google Analytics Event Tracking
+const analyticsTracked = {
+    scrollDepth: new Set(),
+    galleryViewed: new Set()
+};
+
+// Track scroll depth
+window.addEventListener('scroll', function() {
+    const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+
+    [25, 50, 75, 100].forEach(milestone => {
+        if (scrollPercentage >= milestone && !analyticsTracked.scrollDepth.has(milestone)) {
+            analyticsTracked.scrollDepth.add(milestone);
+            gtag('event', 'scroll_depth', {
+                event_category: 'engagement',
+                event_label: `${milestone}%`,
+                value: milestone
+            });
+        }
+    });
+});
+
+// Track schedule call CTA clicks
+function trackScheduleCallClick() {
+    gtag('event', 'schedule_call_click', {
+        event_category: 'conversion',
+        event_label: 'exploratory_call'
+    });
+}
+
+// Track sample report/Google Drive link clicks
+function trackSampleReportClick(source) {
+    gtag('event', 'sample_report_view', {
+        event_category: 'engagement',
+        event_label: source || 'sample_report_link'
+    });
+}
+
+// Track gallery item views
+function trackGalleryView(caption) {
+    if (!analyticsTracked.galleryViewed.has(caption)) {
+        analyticsTracked.galleryViewed.add(caption);
+        gtag('event', 'gallery_view', {
+            event_category: 'engagement',
+            event_label: caption || 'report_sample'
+        });
+    }
+}
+
 // Mobile Menu Toggle
 document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
@@ -23,6 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 lightboxCaption.textContent = this.dataset.caption;
                 lightbox.classList.add('active');
                 document.body.style.overflow = 'hidden';
+                trackGalleryView(this.dataset.caption);
             });
         });
 
@@ -133,6 +183,19 @@ document.addEventListener('DOMContentLoaded', function() {
                     });
                 }
             }
+        });
+    });
+
+    // Track schedule call CTA clicks (Google Calendar link)
+    document.querySelectorAll('a[href*="calendar.app.google"]').forEach(link => {
+        link.addEventListener('click', trackScheduleCallClick);
+    });
+
+    // Track sample report/Google Drive link clicks
+    document.querySelectorAll('a[href*="drive.google.com/file"]').forEach(link => {
+        link.addEventListener('click', function() {
+            const source = this.closest('section')?.id || this.className || 'sample_report_link';
+            trackSampleReportClick(source);
         });
     });
 });
