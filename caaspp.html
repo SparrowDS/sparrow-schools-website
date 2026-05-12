@@ -3,133 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CAASPP Analytics Package | Sparrow Data Services</title>
-    <meta name="description" content="A complete CAASPP analysis package for California school districts—reports, data workbooks, and tools to turn your results into action.">
+    <title>CAASPP Analysis Package | Sparrow Data Services</title>
+    <meta name="description" content="A complete CAASPP and CAST analysis package for California school districts—deep dive reports, student action steps, an interactive dashboard, and tools to turn your results into action.">
     <link rel="icon" type="image/png" href="images/SDS_logo_transparent.png">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5SXX5XPLB7"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-5SXX5XPLB7');
-    </script>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-N8MVQJNN');</script>
+    <!-- End Google Tag Manager -->
+
     <link rel="stylesheet" href="styles.css">
 
-
     <style>
-        /* CSS Variables for Brand Colors */
-        :root {
-            --color-primary: #A3C6E3;
-            --color-secondary: #C49A6C;
-            --color-beige: #F5E8D8;
-            --color-gray: #D1D5DB;
-            --color-dark: #252930;
-            --color-white: #FFFFFF;
-
-            --transition: all 0.3s ease;
-            --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 4px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        /* Override Brevo form styling to match our page */
-        .sib-form {
-            background-color: transparent !important;
-            text-align: center;
-            margin: 0 !important;
-            padding: 0 !important;
-        }
-
-        #sib-form-container {
-            max-width: 100% !important;
-            margin: 0 !important;
-            padding: 0 !important;
-        }
-
-        #sib-container {
-            background-color: var(--color-beige) !important;
-            border: none !important;
-            border-radius: 12px !important;
-            padding: 1.5rem !important;
-            max-width: 100% !important;
-            margin: 0 !important;
-        }
-
-        /* Tighten form spacing */
-        #sib-container .sib-input.sib-form-block {
-            padding: 0 !important;
-            margin: 0 0 0.75rem 0 !important;
-        }
-
-        #sib-container .sib-input.sib-form-block:first-of-type {
-            margin-top: 0 !important;
-        }
-
-        #sib-container .sib-form-block {
-            padding: 0 !important;
-            margin-bottom: 0.3rem !important;
-        }
-
-        /* Reduce spacing between form blocks */
-        #sib-container .form__entry {
-            padding: 0 !important;
-            margin: 0 !important;
-        }
-
-        #sib-container .form__label-row {
-            margin-bottom: 0.25rem !important;
-        }
-
-        /* Style form inputs - smaller padding */
-        #sib-container .input {
-            border: 1px solid var(--color-gray) !important;
-            border-radius: 6px !important;
-            padding: 0.4rem 0.6rem !important;
-            font-family: inherit !important;
-            background-color: var(--color-white) !important;
-            font-size: 0.9rem !important;
-            line-height: 1.4 !important;
-            height: auto !important;
-            min-height: 32px !important;
-        }
-
-        #sib-container .input:focus {
-            border-color: var(--color-primary) !important;
-            outline: none !important;
-            box-shadow: 0 0 0 3px rgba(163, 198, 227, 0.1) !important;
-        }
-
-        /* Reduce label font size and margin */
-        #sib-container .entry__label {
-            font-size: 0.9rem !important;
-            margin-bottom: 0.15rem !important;
-        }
-
-        /* Style the button */
-        .sib-form-block__button {
-            background-color: var(--color-primary) !important;
-            color: var(--color-white) !important;
-            font-weight: 600 !important;
-            border-radius: 6px !important;
-            padding: 0.65rem 0.875rem !important;
-            width: 100% !important;
-            transition: var(--transition) !important;
-            border: none !important;
-            font-size: 0.95rem !important;
-            margin-top: 0.25rem !important;
-            text-align: center !important;
-            display: flex !important;
-            justify-content: center !important;
-            align-items: center !important;
-            gap: 0.5rem !important;
-        }
-
-        .sib-form-block__button:hover {
-            background-color: #8BB4D6 !important;
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg) !important;
-        }
-
+        /* ── Grid overrides ── */
         .three-col-grid {
             grid-template-columns: repeat(3, 1fr) !important;
         }
@@ -144,7 +33,108 @@
             }
         }
 
-        /* Gallery */
+        /* ── Featured deliverable cards ── */
+        .featured-deliverable {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            padding: 3rem 0;
+            border-bottom: 1px solid var(--color-beige);
+        }
+        .featured-deliverable:last-child {
+            border-bottom: none;
+        }
+        .featured-deliverable.reverse {
+            direction: rtl;
+        }
+        .featured-deliverable.reverse > * {
+            direction: ltr;
+        }
+        .featured-deliverable-text h3 {
+            font-size: 1.6rem;
+            color: var(--color-dark);
+            margin-bottom: 0.75rem;
+        }
+        .featured-deliverable-text .tag {
+            display: inline-block;
+            background-color: var(--color-primary);
+            color: var(--color-dark);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            margin-bottom: 0.75rem;
+        }
+        .featured-deliverable-text p {
+            color: #4A5568;
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+        .featured-deliverable-visual {
+            background-color: var(--color-beige);
+            border-radius: 12px;
+            overflow: hidden;
+            min-height: 240px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .featured-deliverable-visual img {
+            width: 100%;
+            display: block;
+            border-radius: 12px;
+        }
+        .img-placeholder {
+            width: 100%;
+            min-height: 240px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            color: var(--color-secondary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-align: center;
+            padding: 2rem;
+        }
+        .img-placeholder svg {
+            width: 40px;
+            height: 40px;
+            opacity: 0.5;
+        }
+        @media (max-width: 768px) {
+            .featured-deliverable {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .featured-deliverable.reverse {
+                direction: ltr;
+            }
+        }
+
+        /* ── Thumbnail image strips (featured deliverable panels) ── */
+        .thumb-item {
+            cursor: pointer;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            background-color: var(--color-beige);
+        }
+        .thumb-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+        }
+        .thumb-item img {
+            width: 100%;
+            display: block;
+        }
+
+        /* ── Gallery ── */
         .gallery-item {
             cursor: pointer;
             border-radius: 10px;
@@ -170,7 +160,7 @@
             margin: 0;
         }
 
-        /* Lightbox */
+        /* ── Lightbox ── */
         #lightbox {
             display: none;
             position: fixed;
@@ -213,12 +203,130 @@
             opacity: 0.8;
             transition: opacity 0.2s;
         }
-        #lightbox-close:hover {
-            opacity: 1;
+        #lightbox-close:hover { opacity: 1; }
+
+        /* ── Contact block ── */
+        .contact-block {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem 2.5rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+        .contact-block a {
+            color: var(--color-dark);
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: var(--transition);
+        }
+        .contact-block a:hover {
+            color: var(--color-secondary);
+        }
+        .contact-block svg {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+        }
+
+        /* ── Deliverables full list ── */
+        .deliverable-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem 3rem;
+            max-width: 900px;
+            margin: 3rem auto 0;
+        }
+        .deliverable-item strong {
+            display: block;
+            color: var(--color-secondary);
+            margin-bottom: 0.35rem;
+        }
+        .deliverable-item p {
+            color: #4A5568;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* ── Pricing card ── */
+        .pricing-card {
+            background-color: var(--color-white);
+            border: 2px solid var(--color-primary);
+            border-radius: 16px;
+            padding: 2.5rem;
+            max-width: 600px;
+            margin: 2.5rem auto 0;
+            text-align: center;
+        }
+        .pricing-card .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-dark);
+            line-height: 1.1;
+        }
+        .pricing-card .price-label {
+            font-size: 1rem;
+            color: #4A5568;
+            margin-top: 0.25rem;
+            margin-bottom: 1.5rem;
+        }
+        .pricing-card p {
+            color: #4A5568;
+            line-height: 1.6;
+            margin-bottom: 0.75rem;
+        }
+
+        /* ── Deliverable rows responsive ── */
+        @media (max-width: 900px) {
+            /* 4-col row becomes 2-col */
+            [style*="grid-template-columns: repeat(4, 1fr)"] {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+            /* 3-col row becomes 1-col */
+            [style*="grid-template-columns: repeat(3, 1fr)"] {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+        }
+        @media (max-width: 600px) {
+            [style*="grid-template-columns: repeat(4, 1fr)"],
+            [style*="grid-template-columns: repeat(3, 1fr)"] {
+                grid-template-columns: 1fr !important;
+            }
+        }
+
+        /* ── CTA band ── */
+        .cta-band {
+            background-color: var(--color-dark);
+            padding: 4rem 0;
+            text-align: center;
+        }
+        .cta-band h2 {
+            color: var(--color-white);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .cta-band p {
+            color: var(--color-gray);
+            max-width: 640px;
+            margin: 0 auto 2rem;
+            line-height: 1.7;
+        }
+        .cta-band .contact-block a {
+            color: var(--color-gray);
+        }
+        .cta-band .contact-block a:hover {
+            color: var(--color-white);
         }
     </style>
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N8MVQJNN"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
@@ -228,9 +336,7 @@
                     <span>Sparrow Data Services</span>
                 </a>
                 <button class="mobile-menu-toggle" aria-label="Toggle menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    <span></span><span></span><span></span>
                 </button>
                 <ul class="nav-menu">
                     <li><a href="index.html">Home</a></li>
@@ -244,85 +350,273 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- HERO                                        -->
+    <!-- ═══════════════════════════════════════════ -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Your CAASPP Results,<br>Explained.</h1>
+                <h1>Your CAASPP Results,<br>Made Useful.</h1>
                 <p class="hero-subtitle">Every year, districts receive one of the most important pictures of how their students are performing.  Your board wants answers. Your principals want direction. Your teachers want to know what it means for their classrooms. And it’s all packaged in one of the largest spreadsheets you’ll ever be handed.</p>
-                <p class="hero-subtitle">We turn that raw data into clear reports, usable workbooks, and concrete next steps—delivered within 10 days of results dropping.</p><div class="hero-buttons">
-                    <a href="https://drive.google.com/file/d/1AkX3uqMqX3vB7h5C7rDcK9q54x55ftUE/view?usp=sharing" target="_blank" class="btn btn-primary">View Sample Report</a>
+                <p class="hero-subtitle">We turn that raw data into clear reports, usable workbooks, and concrete next steps all designed to help you see your systems and support your students.</p>
+                <div class="hero-buttons">
+                    <a href="https://calendar.app.google/sr9TyETB7nYMgH5N8" target="_blank" class="btn btn-primary" data-cta="hero-book-call">Book a Free Consultation</a>
+                    <a href="#deliverables" class="btn btn-secondary">See What's Included</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- The Problem Section -->
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- PROBLEM FRAMING                             -->
+    <!-- ═══════════════════════════════════════════ -->
     <section class="services">
         <div class="container">
-            <h2>Your CAASPP Results Deserve More Than a Spreadsheet.</h2>
-
+            <h2>The Data Is Important. The Problem Is What Happens Next.</h2>
             <div class="why-grid" style="margin-top: 3rem;">
                 <div class="why-item">
-                    <h3>The Data Is Complex By Design</h3>
-                    <p>The TOMS data download is built for data analysts, not for a director of curriculum wearing four other hats. Distance from Standard, student growth, claim-level performance, subgroup disaggregations—it takes real expertise to pull meaningful signal from all of it.</p>
+                    <h3>It Arrives in a Spreadsheet</h3>
+                    <p>The TOMS data download is built for data analysts. Distance from Standard, student growth percentiles, claim-level performance, subgroup disaggregations—it takes real expertise to pull meaningful signal from all of it, and most small districts don't have a dedicated analyst to do it.</p>
                 </div>
                 <div class="why-item">
-                    <h3>The Stakes Are Real</h3>
-                    <p>Your CAASPP results feed directly into the California Dashboard, affect your accountability status, and shape the story your community tells about your schools. You need to understand your data—and be able to communicate it clearly—before someone else tells the story for you.</p>
+                    <h3>The Stakes Are High</h3>
+                    <p>Your CAASPP results feed directly into your California Dashboard accountability ratings, shape your LCAP priorities, and define the story your community tells about your schools. You need to understand your data—and communicate it clearly—before someone else tells the story for you.</p>
                 </div>
                 <div class="why-item">
-                    <h3>What's Usually Missing</h3>
-                    <p>Most districts can pull a Percent Met and Exceeded or an achievement level breakdown from their SIS. That's a starting point—but it's not analysis. What's harder to get to is the trend across years, the subgroup disaggregation, the Dashboard prediction, the student-level picture, and the clear answer to "what do we actually do about this?" That's the gap we fill.</p>
+                    <h3>Two Things Have to Happen</h3>
+                    <p>Real improvement requires both system-level analysis and student-level action. You need to understand where your district is and where it's headed—and you need to be able to see individual students who need attention. Both matter. Most analysis tools give you one or the other.</p>
                 </div>
             </div>
 
+            <!-- Credibility insert -->
             <div style="background-color: var(--color-beige); border-radius: 12px; padding: 2rem 2.5rem; margin-top: 3rem; max-width: 800px; margin-left: auto; margin-right: auto;">
-                <h3 style="color: var(--color-secondary); margin-bottom: 1rem;">Built by real educators, not AI</h3>
-                <p style="color: #4A5568; line-height: 1.7;">Every table, every chart, every graph has been constructed with purpose to answer the questions you’re asking. We bring over 15 years of hands-on experience working directly with California student data—in the classroom and in the district office. We’ve processed results and led data analysis at admin retreats and school site PLCs. We've mentored district analysts on better data display and coached leadership teams through the work of turning results into instructional action. This isn't a generic analytics product. It's a service built by someone who has sat with others like you and knows exactly what you need.</p>
-                <p style="color: #4A5568; line-height: 1.7; margin-top: 1rem;">And your data is handled with the seriousness it deserves. All transmission, storage, and communication of student data is fully FERPA compliant. We use secure methods for file transfer—you upload your data to a protected folder; we process it and return your deliverables through the same secure channel. We never have direct access to your systems or any student records beyond what you choose to share. </p>
+                <h3 style="color: var(--color-secondary); margin-bottom: 1rem;">Built from 15+ years in California education data</h3>
+                <p style="color: #4A5568; line-height: 1.7;">Every table, chart, and graph in this package has been designed with a specific question in mind. The structure of the analysis—what to look at, in what order, with what context—comes from over 15 years of direct work with California student data: in the classroom, in the district office, and in collaborative data sessions with leadership teams. We've led data analysis at admin retreats and school site PLCs. We've coached teams through the work of turning assessment results into instructional priorities. The analysis framework is ours; we use technology to execute it well at scale.</p>
+                <p style="color: #4A5568; line-height: 1.7; margin-top: 1rem;">Your data is handled with the seriousness it deserves. All file transfer, storage, and communication of student data is fully FERPA compliant. You upload to a protected folder; we process and return your deliverables through the same secure channel. We never have direct access to your systems or any student records beyond what you share.</p>
             </div>
         </div>
     </section>
 
-    <!-- Sample Report Gallery -->
-    <section id="sample-report" class="vision">
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- FEATURED DELIVERABLES                       -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section id="deliverables" class="why-choose">
+        <div class="container">
+            <h2>What Makes This Package Different</h2>
+            <p class="section-subtitle">Four deliverables you won't find packaged together anywhere else—each one designed to answer a question your district actually needs answered.</p>
+
+            <!-- 1. Deep Dives -->
+            <div class="featured-deliverable" style="margin-top: 3rem;">
+                <div class="featured-deliverable-text">
+                    <span class="tag">Subject-Specific Analysis</span>
+                    <h3>ELA, Math &amp; Science Deep Dive Reports</h3>
+                    <p>Instead of one sprawling report, you get three focused analyses—one per subject—each built around the questions that matter most for that content area. Distance from Standard, Percent Met and Exceeded, multi-year trends, achievement level breakdowns, subgroup disaggregations, and site-by-site comparisons. The depth of a comprehensive analysis, organized so it's actually usable by curriculum leads and content coaches—not just data staff.</p>
+                    <p style="margin-top: 0.75rem; color: #4A5568;">Covers CAASPP ELA and Math results plus CAST (California Science Test) results.</p>
+                </div>
+                <div class="featured-deliverable-visual" style="background:none; display:block; padding: 0;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.6rem;">
+                        <div class="thumb-item"
+                             onclick="openLightbox('images/DA_-_Achievement_Level_Breakdown.jpg', 'Achievement Level Breakdown — performance distribution across all four CAASPP levels, by site, grade, and student group')"
+                             title="Click to enlarge">
+                            <img src="images/DA_-_Achievement_Level_Breakdown.jpg" alt="Achievement Level Breakdown">
+                        </div>
+                        <div class="thumb-item"
+                             onclick="openLightbox('images/DA_-_Risers_and_Fallers.jpg', 'Risers, Sustainers, and Fallers — aggregate student movement between achievement levels from the prior year')"
+                             title="Click to enlarge">
+                            <img src="images/DA_-_Risers_and_Fallers.jpg" alt="Risers, Sustainers, and Fallers">
+                        </div>
+                        <div class="thumb-item"
+                             onclick="openLightbox('images/DA_-_School_Site_Comparison.jpg', 'School Site Comparison — DFS, % Met or Exceeded, and Growth side by side across all your school sites')"
+                             title="Click to enlarge">
+                            <img src="images/DA_-_School_Site_Comparison.jpg" alt="School Site Comparison">
+                        </div>
+                    </div>
+                    <p style="font-size:0.75rem; color:#718096; text-align:center; margin-top:0.5rem; font-style:italic;">Click any image to enlarge</p>
+                </div>
+            </div>
+
+            <!-- 2. Student Action Steps -->
+            <div class="featured-deliverable reverse">
+                <div class="featured-deliverable-text">
+                    <span class="tag">Student-Level View</span>
+                    <h3>Student Action Steps Report</h3>
+                    <p>This is where the system-level analysis connects to individual students. For each student, the report identifies their performance level, growth trajectory, and specific, prioritized next steps for teachers and coaches. Not generic recommendations—actual action steps grounded in your district's results. Designed for principals and instructional coaches to use at the start of a new year, in PLC meetings, or during individual teacher coaching conversations.</p>
+                </div>
+                <div class="featured-deliverable-visual" style="background:none; display:block; padding: 0;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.6rem;">
+                        <div class="thumb-item"
+                             onclick="openLightbox('images/Action_Steps_HiddenStrength.jpg', 'Hidden Strength — students who declined in one subject but showed meaningful growth in the other, with cross-subject context and action steps')"
+                             title="Click to enlarge">
+                            <img src="images/Action_Steps_HiddenStrength.jpg" alt="Action Steps: Hidden Strength">
+                        </div>
+                        <div class="thumb-item"
+                             onclick="openLightbox('images/Action_Steps_Disengagement.jpg', 'Possible Disengagement — students whose score pattern suggests disengagement from testing rather than a learning crisis, with follow-up guidance')"
+                             title="Click to enlarge">
+                            <img src="images/Action_Steps_Disengagement.jpg" alt="Action Steps: Possible Disengagement">
+                        </div>
+                        <div class="thumb-item"
+                             onclick="openLightbox('images/Action_Steps_HiddenDecliners.jpg', 'Hidden Decliners — students previously meeting or exceeding standards who have shown consistent negative growth, often invisible in aggregate reporting')"
+                             title="Click to enlarge">
+                            <img src="images/Action_Steps_HiddenDecliners.jpg" alt="Action Steps: Hidden Decliners">
+                        </div>
+                    </div>
+                    <p style="font-size:0.75rem; color:#718096; text-align:center; margin-top:0.5rem; font-style:italic;">Click any image to enlarge</p>
+                </div>
+            </div>
+
+            <!-- 3. Interactive Dashboard -->
+            <div class="featured-deliverable">
+                <div class="featured-deliverable-text">
+                    <span class="tag">Interactive</span>
+                    <h3>Interactive Data Dashboard</h3>
+                    <p>A live, interactive Power BI dashboard built from your district's results. Filter by school site, grade level, subject, or student group. Toggle between metrics. See your data move in real time instead of hunting through static pages. Built for administrators who want to explore their results independently—and for leadership team meetings where the data needs to be visible and discussable in the room.</p>
+                </div>
+                <div class="featured-deliverable-visual" style="background:none; display:block; padding: 0;">
+                    <div class="thumb-item" style="max-width: 75%; margin: 0 auto;"
+                         onclick="openLightbox('images/InteractiveDashboardScreenshot.jpg', 'Interactive Power BI Dashboard — filter by school site, grade level, subject, or student group in real time')"
+                         title="Click to enlarge">
+                        <img src="images/InteractiveDashboardScreenshot.jpg" alt="Interactive Power BI Dashboard screenshot" style="width:100%;display:block;">
+                    </div>
+                    <p style="font-size:0.75rem; color:#718096; text-align:center; margin-top:0.5rem; font-style:italic;">Click to enlarge</p>
+                </div>
+            </div>
+
+            <!-- 4. CA Dashboard Prediction -->
+            <div class="featured-deliverable reverse">
+                <div class="featured-deliverable-text">
+                    <span class="tag">Accountability</span>
+                    <h3>California Dashboard Prediction Report</h3>
+                    <p>Your CAASPP results feed directly into your California Dashboard accountability ratings—but the connection isn't obvious, and most districts don't know where they stand until the Dashboard is published months later. This standalone report shows you what your current results predict for your Dashboard color, by indicator and student group, before anyone else sees it. Know your trajectory early enough to act on it.</p>
+                </div>
+                <div class="featured-deliverable-visual" style="background:none; display:block; padding: 0;">
+                    <div class="thumb-item" style="max-width: 75%; margin: 0 auto;"
+                         onclick="openLightbox('images/DA_-_Dashboard_Prediction.jpg', 'CA Dashboard Prediction — your projected Dashboard color and student group performance levels based on current CAASPP results')"
+                         title="Click to enlarge">
+                        <img src="images/DA_-_Dashboard_Prediction.jpg" alt="CA Dashboard Prediction sample" style="width:100%;display:block;">
+                    </div>
+                    <p style="font-size:0.75rem; color:#718096; text-align:center; margin-top:0.5rem; font-style:italic;">Click to enlarge</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- MID-PAGE CTA                                -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section class="vision">
         <div class="container">
             <div class="vision-content">
-                <h2>See What You'll Actually Receive</h2>
-                <p>Every deliverable is built from your district's real data. Here's a look inside the District Analysis Report—the centerpiece of the package. Click any page to enlarge.</p>
-            </div>
-        </div>
-        <div style="max-width: 1100px; margin: 2.5rem auto 0; padding: 0 20px;">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem;">
-
-                <div class="gallery-item" data-src="images/DA_-_Achievement_Level_Breakdown.jpg" data-caption="Achievement Level Breakdown — performance distribution across all four CAASPP levels, by site, grade, and student group">
-                    <img src="images/DA_-_Achievement_Level_Breakdown.jpg" alt="Achievement Level Breakdown report page">
-                    <p class="gallery-caption">Achievement Level Breakdown</p>
+                <h2>Ready to Talk Through Your District's Situation?</h2>
+                <p>Book a free 20-minute consultation. We'll learn where your district is, what your CAASPP results have looked like, and whether this package would be a good fit. No commitment, no pressure—just a real conversation.</p>
+                <div style="margin-top: 2rem;">
+                    <a href="https://calendar.app.google/sr9TyETB7nYMgH5N8" target="_blank" class="btn btn-secondary" data-cta="mid-book-call">Book a Free Consultation</a>
                 </div>
-
-                <div class="gallery-item" data-src="images/DA_-_Dashboard_Prediction.jpg" data-caption="CA Dashboard Prediction — your projected Dashboard color and student group performance levels based on current CAASPP results">
-                    <img src="images/DA_-_Dashboard_Prediction.jpg" alt="CA Dashboard Prediction report page">
-                    <p class="gallery-caption">CA Dashboard Prediction</p>
+                <div class="contact-block" style="margin-top: 1.25rem;">
+                    <a href="tel:+15592481928">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.09a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                        (559) 248-1928
+                    </a>
+                    <a href="mailto:david@sparrowdataservices.com">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        david@sparrowdataservices.com
+                    </a>
                 </div>
-
-                <div class="gallery-item" data-src="images/DA_-_Risers_and_Fallers.jpg" data-caption="Risers, Sustainers, and Fallers — aggregate student movement between achievement levels from the prior year">
-                    <img src="images/DA_-_Risers_and_Fallers.jpg" alt="Risers, Sustainers, and Fallers report page">
-                    <p class="gallery-caption">Risers, Sustainers &amp; Fallers</p>
-                </div>
-
-                <div class="gallery-item" data-src="images/DA_-_School_Site_Comparison.jpg" data-caption="School Site Comparison — DFS, % Met or Exceeded, and Growth side by side across all your school sites">
-                    <img src="images/DA_-_School_Site_Comparison.jpg" alt="School Site Comparison report page">
-                    <p class="gallery-caption">School Site Comparison</p>
-                </div>
-
-            </div>
-            <p>See exactly what your district would receive. Click below to view a sample of the District Analysis Report—built from a fictional district's data so you can see every section, every subject, and every visualization.</p>
-            <div style="text-align: center; margin-top: 1.25rem;">
-                <a href="https://drive.google.com/file/d/1AkX3uqMqX3vB7h5C7rDcK9q54x55ftUE/view?usp=sharing" target="_blank" class="btn btn-secondary">View Full Sample Report</a>
             </div>
         </div>
     </section>
+
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- FULL DELIVERABLES LIST                      -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section class="why-choose">
+        <div class="container">
+            <h2>Everything in the Package</h2>
+            <p class="section-subtitle">Seven deliverables, each designed for a specific audience and purpose.</p>
+
+            <!-- Row 1: the four featured deliverables -->
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem 2rem; max-width: 1000px; margin: 3rem auto 0;">
+                <div class="deliverable-item">
+                    <strong>Subject-Specific Deep Dives</strong>
+                    <p>Three separate focused reports—ELA, Math, and Science (CAST)—each built around the questions that matter for that content area. Organized for curriculum leads and content coaches, not just data staff.</p>
+                </div>
+                <div class="deliverable-item">
+                    <strong>Student Action Steps Report</strong>
+                    <p>Student-level performance data paired with specific, prioritized next steps for principals and instructional coaches. The bridge between system-level analysis and individual students.</p>
+                </div>
+                <div class="deliverable-item">
+                    <strong>Interactive Data Dashboard</strong>
+                    <p>A live Power BI dashboard you can filter by site, grade, subject, and student group. Built for exploration, leadership meetings, and ongoing reference throughout the year.</p>
+                </div>
+                <div class="deliverable-item">
+                    <strong>CA Dashboard Prediction Report</strong>
+                    <p>A standalone report showing what your current results predict for your California Dashboard accountability ratings—by indicator and student group—before the Dashboard is published.</p>
+                </div>
+            </div>
+
+            <!-- Row 2: the three supporting deliverables -->
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem 2rem; max-width: 1000px; margin: 1.5rem auto 0;">
+                <div class="deliverable-item">
+                    <strong>Executive Summary Report</strong>
+                    <p>A high-level overview of your district's results—key metrics, notable trends, and the context your board needs to have an informed conversation. Built for leadership, not data staff.</p>
+                </div>
+                <div class="deliverable-item">
+                    <strong>Staff Discussion Guide</strong>
+                    <p>A structured guide for leading your team through a data-focused professional development session—systems analysis, root-cause conversation prompts, and a clear flow from results to priorities. No outside facilitator required.</p>
+                </div>
+                <div class="deliverable-item">
+                    <strong>Analysis Spreadsheet Tools</strong>
+                    <p>Multiple formatted Excel workbooks built from your student-level TOMS data—color-coded, filterable, and organized for your team's own ongoing analysis work throughout the year.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- PRICING                                     -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section class="services">
+        <div class="container">
+            <h2 style="text-align:center;">Pricing</h2>
+            <p class="section-subtitle">A one-time flat fee. No per-student pricing. No ongoing subscription.</p>
+
+            <div class="pricing-card">
+                <div class="price">Starting at just $1,900</div>
+                <div class="price-label">District Package — all seven deliverables</div>
+                <p>Built from your district's actual data. The right starting point for understanding your results, communicating them to your board, and setting instructional direction before the year begins.</p>
+                <p>Site-level add-ons are available for districts that want the same analysis broken out by individual school site. <a href="mailto:david@sparrowdataservices.com" style="color:var(--color-secondary);font-weight:600;">Contact us</a> to discuss scope.</p>
+                <p style="margin-top: 1rem; font-size: 0.9rem; color: #718096;">All deliverables provided as a secure file package—PDFs, Excel workbooks, and the interactive dashboard access—delivered within 10 days of your CAASPP results being available.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- CLOSING CTA                                 -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section class="cta-band">
+        <div class="container">
+            <h2>Let's Talk About Your District</h2>
+            <p>Book a free 20-minute consultation. We'll ask about your district's situation—enrollment, sites, recent results, what questions keep coming up—and you can ask us anything. If it's a good fit, we'll tell you. If it isn't, we'll tell you that too.</p>
+            <a href="https://calendar.app.google/sr9TyETB7nYMgH5N8" target="_blank" class="btn btn-primary" data-cta="closing-book-call">Book a Free Consultation</a>
+            <div class="contact-block">
+                <a href="tel:+15592481928">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.09a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                    (559) 248-1928
+                </a>
+                <a href="mailto:david@sparrowdataservices.com">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    david@sparrowdataservices.com
+                </a>
+            </div>
+        </div>
+    </section>
+
 
     <!-- Lightbox -->
     <div id="lightbox" role="dialog" aria-modal="true" aria-label="Report page preview">
@@ -331,139 +625,6 @@
         <p id="lightbox-caption"></p>
     </div>
 
-    <!-- What We Give You Section (Conceptual) -->
-    <section id="what-you-receive" class="why-choose">
-        <div class="container">
-            <h2>What You'll Actually Know When We're Done</h2>
-            <p class="section-subtitle">The package is built around six things every district should be able to say about their CAASPP results—but rarely can without dedicated support.</p>
-
-            <div class="services-grid three-col-grid" style="margin-top: 3rem;">
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <line x1="18" y1="20" x2="18" y2="10"/>
-                            <line x1="12" y1="20" x2="12" y2="4"/>
-                            <line x1="6" y1="20" x2="6" y2="14"/>
-                        </svg>
-                    </div>
-                    <h3>Where You Stand</h3>
-                    <p>A clear picture of this year's performance across the metrics that matter most—Distance from Standard, Percent Met and Exceeded, and Achievement levels—for all students and for your key focus groups.</p>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
-                            <polyline points="17 6 23 6 23 12"/>
-                        </svg>
-                    </div>
-                    <h3>Whether You're Moving</h3>
-                    <p>Multi-year trend analysis and individual student growth measurement—so you can see not just where you are, but whether your students are actually making progress from year to year.</p>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="11" cy="11" r="8"/>
-                            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-                        </svg>
-                    </div>
-                    <h3>Where the Differences Are</h3>
-                    <p>Performance disaggregated by school site, grade level, and student group—so you can see not just how the district did overall, but where results differ and which populations deserve more attention or well-earned recognition.</p>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5"/>
-                        </svg>
-                    </div>
-                    <h3>Where You're Headed on the CA Dashboard</h3>
-                    <p>Your CAASPP results feed directly into your California Dashboard accountability ratings. We show you what your current results suggest about your Dashboard trajectory, so you're not caught off guard.</p>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="9 11 12 14 22 4"/>
-                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
-                        </svg>
-                    </div>
-                    <h3>Which Students Need Action—and What That Action Is</h3>
-                    <p>A student-level view of who needs support and who deserves recognition, paired with specific, prioritized action steps for principals and instructional coaches. Grounded in your actual results, not generic recommendations.</p>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                            <circle cx="9" cy="7" r="4"/>
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                        </svg>
-                    </div>
-                    <h3>How to Lead Your Team Through the Data</h3>
-                    <p>Knowing your results is one thing. Building shared understanding with your leadership team is another. We give you a structured guide to facilitate a two-hour analysis session—with prompts designed to surface root causes, identify strengths, and align your team around priorities.</p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Deliverables List -->
-    <section class="services">
-        <div class="container">
-            <h2>What's in the Package</h2>
-            <p class="section-subtitle">Six deliverables, each built from your district's actual data. Every item is designed for a specific audience and purpose—from your board to your instructional coaches.</p>
-
-            <div style="max-width: 800px; margin: 3rem auto 0;">
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem 3rem;">
-                <div>
-                    <p style="margin-bottom: 1.25rem;"><strong>Community Snapshot</strong><br>A single-page public-facing summary of your results—clear visuals, plain language, ready to share with your community.</p>
-                    <p style="margin-bottom: 1.25rem;"><strong>Leadership Brief</strong><br>A three-page executive summary built for board presentations. High-level overview, key trends, and the context your board needs to have an informed conversation.</p>
-                    <p style="margin-bottom: 1.25rem;"><strong>District Analysis Report</strong><br>The backbone of the package. 80 pages of analysis—DFS, % Met and Exceeded, Real Growth, Dashboard predictions, achievement level breakdowns, and subgroup disaggregations for ELA and Math with clear visualizations and explanations throughout so that you know exactly where to direct your attention.</p>
-                </div>
-                <div>
-                    <p style="margin-bottom: 1.25rem;"><strong>Student Data Workbook</strong><br>Your student-level CAASPP results transformed into a clean, color-coded Excel workbook—formatted for sorting, filtering, and real analysis by your team.</p>
-                    <p style="margin-bottom: 1.25rem;"><strong>Instructional Next Steps Report</strong><br>Specific, prioritized action steps for principals and instructional coaches—organized by focus area and grounded in your actual results.</p>
-                    <p style="margin-bottom: 1.25rem;"><strong>Leadership Data Analysis Guide</strong><br>A ready-to-run guide for leading a two-hour data analysis session with your leadership team. Guided questions, facilitation prompts, and a clear flow from results to priorities. No outside facilitator needed.</p>
-                </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Pricing & CTA -->
-    <section class="services" style="background-color: var(--color-beige);">
-        <div class="container">
-            <h2>Pricing</h2>
-            <p class="section-subtitle">The district package is a one-time flat fee of $2,100 — no per-student pricing, no ongoing subscription.</p>
-            <div class="why-grid" style="margin-top: 3rem;">
-                <div class="why-item">
-                    <h3>District Package</h3>
-                    <p>All six deliverables built from your district-level data. The right starting point for understanding your overall performance, communicating results to your board, and setting instructional direction for the year ahead.</p>
-                </div>
-                <div class="why-item">
-                    <h3>Site-Level Add-Ons</h3>
-                    <p>Need the same analysis broken out for individual school sites? Site-level add-ons are available. Contact us to discuss scope and pricing based on your number of sites.</p>
-                </div>
-                <div class="why-item">
-                    <h3>Delivery</h3>
-                    <p>All deliverables are provided as a secure file package via cloud download link—PDFs, the Excel workbook, and the Leadership Data Analysis Guide all in one place, ready to use immediately.</p>
-                </div>
-            </div>
-
-            <div style="margin-top: 4rem; text-align: center; padding-top: 3rem; border-top: 2px solid rgba(163, 198, 227, 0.3);">
-                <h2>Ready to See What's Possible?</h2>
-                <p style="max-width: 700px; margin: 1.5rem auto 0;">Let's have a no-pressure conversation about your district's CAASPP results and whether the analysis package would be a good fit for your needs. Schedule a free 20-minute exploratory call to discuss your situation, ask questions, and see if we can help turn your data into clear action.</p>
-                <div style="margin-top: 2rem;">
-                    <a href="https://calendar.app.google/sr9TyETB7nYMgH5N8" class="btn btn-primary" target="_blank">Schedule an Exploratory Call</a>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Footer -->
     <footer class="footer">
@@ -484,7 +645,8 @@
                 </div>
                 <div class="footer-section">
                     <h4>Contact</h4>
-                    <p><a href="index.html#contact">Get in touch</a></p>
+                    <p><a href="tel:+15592481928" style="color:var(--color-gray);">(559) 248-1928</a></p>
+                    <p><a href="mailto:david@sparrowdataservices.com" style="color:var(--color-gray);">david@sparrowdataservices.com</a></p>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -494,5 +656,55 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        // ── Lightbox ──
+        function openLightbox(src, caption) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox-caption').textContent = caption || '';
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('click', function() {
+                openLightbox(
+                    this.dataset.src,
+                    this.dataset.caption
+                );
+            });
+        });
+
+        document.getElementById('lightbox-close').addEventListener('click', function() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        document.getElementById('lightbox').addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.getElementById('lightbox').classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // ── GA4 CTA click events (fires when GTM is not yet set up) ──
+        document.querySelectorAll('[data-cta]').forEach(el => {
+            el.addEventListener('click', function() {
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'cta_click', {
+                        cta_id: this.dataset.cta,
+                        cta_text: this.textContent.trim(),
+                        page_location: window.location.href
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
